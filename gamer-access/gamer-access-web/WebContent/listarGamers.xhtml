@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<p:dataTable id="dataTableGamers" var="gamer"
+	value="#{listarGamerBean.listGamer}" style="width:100%"
+	emptyMessage="Nenhum gamer cadastrado">
+	<f:facet name="header">
+					Jogadores Cadastrados
+				</f:facet>
+	<p:column headerText="Nome">
+		<h:outputText value="#{gamer.nome}" />
+	</p:column>
+	<p:column headerText="E-mail">
+		<h:outputText value="#{gamer.email}" />
+	</p:column>
+	<p:column headerText="Telefone">
+		<h:outputText value="#{gamer.telefone}" />
+	</p:column>
+	<p:column headerText="Codinome">
+		<h:outputText value="#{gamer.codinomeSelecionado}" />
+	</p:column>
+	<p:column headerText="Team">
+		<h:outputText
+			value="#{gamer.teamSelecionado == 1 ? 'TEAM VINGADORES' : 'TEAM LIGA DA JUSTIÇA' }" />
+	</p:column>
+</p:dataTable>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="JPAGamerAccess"
+		transaction-type="JTA">
+
+		<jta-data-source>ds-uol</jta-data-source>
+		<class> br.com.uol.gameraccess.ejb.po.GamerPO</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+
+			<property name="hibernate.transaction.manager_lookup_class"
+				value="org.hibernate.transaction.WeblogicTransactionManagerLookup" />
+
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.use_sql_comments" value="true" />
+			<property name="hibernate.jdbc.wrap_result_sets" value="false" />
+			<property name="hibernate.hibernate.cache.use_query_cache"
+				value="false" />
+			<property name="eclipselink.query-results-cache" value="false" />
+		</properties>
+	</persistence-unit>
+</persistence>
